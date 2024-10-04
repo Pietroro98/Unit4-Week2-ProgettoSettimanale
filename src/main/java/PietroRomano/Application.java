@@ -215,37 +215,98 @@ public class Application {
         System.out.println("Gioco rimosso con successo!");
     }
 
+//    private static void aggiornaGioco(Scanner scanner, Collezione collezione) {
+//        System.out.println("Aggiorna un videogioco (1) o un gioco da tavolo (2)?");
+//        int tipo = scanner.nextInt();
+//        scanner.nextLine();
+//        if (tipo == 1) {
+//            System.out.println("Inserisci l'ID, Titolo, Anno di Pubblicazione, Prezzo, Piattaforma, Durata in Minuti, Genere:");
+//            int id = scanner.nextInt(); scanner.nextLine();
+//            String titolo = scanner.nextLine();
+//            int anno = scanner.nextInt(); scanner.nextLine();
+//            double prezzo = scanner.nextDouble(); scanner.nextLine();
+//            String piattaforma = scanner.nextLine();
+//            int durata = scanner.nextInt(); scanner.nextLine();
+//            Genere genere = Genere.valueOf(scanner.nextLine().toUpperCase());
+//
+//            Videogioco videogioco = new Videogioco(id, titolo, anno, prezzo, piattaforma, durata, genere);
+//            collezione.aggiornaElemento(videogioco);
+//            System.out.println("Videogioco aggiornato con successo!");
+//        } else if (tipo == 2) {
+//            System.out.println("Inserisci l'ID, Titolo, Anno di Pubblicazione, Prezzo, Numero di Giocatori, Durata in Minuti:");
+//            int id = scanner.nextInt(); scanner.nextLine();
+//            String titolo = scanner.nextLine();
+//            int anno = scanner.nextInt(); scanner.nextLine();
+//            double prezzo = scanner.nextDouble(); scanner.nextLine();
+//            int numGiocatori = scanner.nextInt(); scanner.nextLine();
+//            int durata = scanner.nextInt(); scanner.nextLine();
+//
+//            GiocoDaTavolo giocoDaTavolo = new GiocoDaTavolo(id, titolo, anno, prezzo, numGiocatori, durata);
+//            collezione.aggiornaElemento(giocoDaTavolo);
+//            System.out.println("Gioco da tavolo aggiornato con successo!");
+//        } else {
+//            System.out.println("Scelta non valida.");
+//        }
+//    }
+
     private static void aggiornaGioco(Scanner scanner, Collezione collezione) {
         System.out.println("Aggiorna un videogioco (1) o un gioco da tavolo (2)?");
-        int tipo = scanner.nextInt();
-        scanner.nextLine();
-        if (tipo == 1) {
-            System.out.println("Inserisci l'ID, Titolo, Anno di Pubblicazione, Prezzo, Piattaforma, Durata in Minuti, Genere:");
-            int id = scanner.nextInt(); scanner.nextLine();
-            String titolo = scanner.nextLine();
-            int anno = scanner.nextInt(); scanner.nextLine();
-            double prezzo = scanner.nextDouble(); scanner.nextLine();
-            String piattaforma = scanner.nextLine();
-            int durata = scanner.nextInt(); scanner.nextLine();
-            Genere genere = Genere.valueOf(scanner.nextLine().toUpperCase());
+        while (true) {
+            try {
+                int tipo = scanner.nextInt();
+                scanner.nextLine();
 
-            Videogioco videogioco = new Videogioco(id, titolo, anno, prezzo, piattaforma, durata, genere);
-            collezione.aggiornaElemento(videogioco);
-            System.out.println("Videogioco aggiornato con successo!");
-        } else if (tipo == 2) {
-            System.out.println("Inserisci l'ID, Titolo, Anno di Pubblicazione, Prezzo, Numero di Giocatori, Durata in Minuti:");
-            int id = scanner.nextInt(); scanner.nextLine();
-            String titolo = scanner.nextLine();
-            int anno = scanner.nextInt(); scanner.nextLine();
-            double prezzo = scanner.nextDouble(); scanner.nextLine();
-            int numGiocatori = scanner.nextInt(); scanner.nextLine();
-            int durata = scanner.nextInt(); scanner.nextLine();
+                if (tipo == 1) {
 
-            GiocoDaTavolo giocoDaTavolo = new GiocoDaTavolo(id, titolo, anno, prezzo, numGiocatori, durata);
-            collezione.aggiornaElemento(giocoDaTavolo);
-            System.out.println("Gioco da tavolo aggiornato con successo!");
-        } else {
-            System.out.println("Scelta non valida.");
+                    System.out.println("Inserisci l'ID, Titolo, Anno di Pubblicazione, Prezzo, Piattaforma, Durata in Minuti, Genere:");
+                    int id = scanner.nextInt();
+                    scanner.nextLine();
+                    String titolo = scanner.nextLine();
+                    int anno = scanner.nextInt();
+                    scanner.nextLine();
+                    double prezzo = scanner.nextDouble();
+                    scanner.nextLine();
+                    String piattaforma = scanner.nextLine();
+                    int durata = scanner.nextInt();
+                    scanner.nextLine();
+                    String genereInput = scanner.nextLine().toUpperCase();
+                    Genere genere = Genere.valueOf(genereInput);
+
+                    Videogioco videogioco = new Videogioco(id, titolo, anno, prezzo, piattaforma, durata, genere);
+
+                    collezione.aggiornaElemento(videogioco);
+                    System.out.println("Videogioco aggiornato con successo!");
+                    break;
+
+                } else if (tipo == 2) {
+
+                    System.out.println("Inserisci l'ID, Titolo, Anno di Pubblicazione, Prezzo, Numero di Giocatori, Durata in Minuti:");
+                    int id = scanner.nextInt();
+                    scanner.nextLine();
+                    String titolo = scanner.nextLine();
+                    int anno = scanner.nextInt();
+                    scanner.nextLine();
+                    double prezzo = scanner.nextDouble();
+                    scanner.nextLine();
+                    int numGiocatori = scanner.nextInt();
+                    scanner.nextLine();
+                    int durata = scanner.nextInt();
+                    scanner.nextLine();
+
+                    GiocoDaTavolo giocoDaTavolo = new GiocoDaTavolo(id, titolo, anno, prezzo, numGiocatori, durata);
+
+                    collezione.aggiornaElemento(giocoDaTavolo);
+                    System.out.println("Gioco da tavolo aggiornato con successo!");
+                    break;
+
+                } else {
+                    System.out.println("Scelta non valida. Inserisci 1 o 2.");
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Errore: Inserisci un numero valido (1 o 2).");
+                scanner.nextLine();
+            }
         }
     }
 
