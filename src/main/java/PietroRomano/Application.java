@@ -185,6 +185,7 @@ public class Application {
         } else {
             System.out.println("Nessun gioco trovato con l'ID: " + id);
         }
+
     }
 
     private static void ricercaPerPrezzo(Scanner scanner, Collezione collezione) {
