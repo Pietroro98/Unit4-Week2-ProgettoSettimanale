@@ -181,7 +181,7 @@ public class Application {
         Gioco gioco = collezione.ricercaGiocoPerId(id);
         if (gioco != null) {
             System.out.println("Gioco trovato: " + gioco.getTitolo() + " - " + gioco.getAnnoPubblicazioneGioco() +
-                    " - " + gioco.getPrezzo() + " €");
+                    " - " + gioco.getPrezzo() + " €" + " - " + " (ID-univoco: "+gioco.getIdGioco()+ " )");
         } else {
             System.out.println("Nessun gioco trovato con l'ID: " + id);
         }
