@@ -33,6 +33,7 @@ public class Gioco {
         return annoPubblicazioneGioco;
     }
 
+
     public void setAnnoPubblicazioneGioco(int annoPubblicazioneGioco) {
         this.annoPubblicazioneGioco = annoPubblicazioneGioco;
     }
