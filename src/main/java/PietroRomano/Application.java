@@ -212,7 +212,7 @@ public class Application {
         int id = scanner.nextInt();
         scanner.nextLine();
         collezione.rimuoviElemento(id);
-        System.out.println("Gioco rimosso con successo!");
+        System.out.println("Gioco con id: " + id + " rimosso con successo!");
     }
 
 //    private static void aggiornaGioco(Scanner scanner, Collezione collezione) {
