@@ -22,9 +22,9 @@ public class Application {
 
         System.out.println("--------------------------------------------------------------");
 
-        GiocoDaTavolo giocoDaTavolo1 = new GiocoDaTavolo(1, "Monopoly Ultimate Banking", 2016, 82.37, 4, 20);
-        GiocoDaTavolo giocoDaTavolo2 = new GiocoDaTavolo(2, "RISIKO", 2017, 35.79, 6, 480);
-        GiocoDaTavolo giocoDaTavolo3 = new GiocoDaTavolo(3, "Gioco dell'oca", 2023, 7.99, 6, 50);
+        GiocoDaTavolo giocoDaTavolo1 = new GiocoDaTavolo(4, "Monopoly Ultimate Banking", 2016, 82.37, 4, 20);
+        GiocoDaTavolo giocoDaTavolo2 = new GiocoDaTavolo(5, "RISIKO", 2017, 35.79, 6, 480);
+        GiocoDaTavolo giocoDaTavolo3 = new GiocoDaTavolo(6, "Gioco dell'oca", 2023, 7.99, 6, 50);
 
         System.out.println("GIOCO DA TAVOLO:");
         System.out.println("ID: " + giocoDaTavolo1.getIdGioco());
@@ -34,6 +34,8 @@ public class Application {
         System.out.println("Numero di Giocatori: " + giocoDaTavolo1.getNumeroGiocatori());
         System.out.println("Durata Media Partita: " + giocoDaTavolo1.getDurataInMinuti());
 
+        System.out.println("--------------------------------------------------------------");
+
         System.out.println("Aggiungi gioco alla collezione:");
         collezione.aggiungiElemento(videogioco1);
         collezione.aggiungiElemento(videogioco2);
@@ -41,6 +43,18 @@ public class Application {
         collezione.aggiungiElemento(giocoDaTavolo1);
         collezione.aggiungiElemento(giocoDaTavolo2);
         collezione.aggiungiElemento(giocoDaTavolo3);
+
+
+        System.out.println("--------------------------------------------------------------");
+
+        System.out.println("Ricerca Gioco per ID: ");
+        Gioco gioco = collezione.ricercaGiocoPerId(1);
+        if (gioco != null) {
+            System.out.println("Gioco trovato per ID 1: " + gioco.getTitolo());
+        }
+
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("Ricerca Gioco per prezzo: ");
 
 
 
