@@ -46,6 +46,7 @@ public class Application {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
+
             mostraMenu();
             int scelta = ottieniSceltaUtente(scanner);
             eseguiOperazione(scelta, scanner, collezione);
@@ -189,7 +190,7 @@ public class Application {
     private static void ricercaPerPrezzo(Scanner scanner, Collezione collezione) {
         System.out.println("Inserisci il prezzo massimo:");
         double prezzoMax = scanner.nextDouble();
-        scanner.nextLine(); // Consuma la newline
+        scanner.nextLine();
         List<Gioco> giochi = collezione.ricercaGiocoPerPrezzo(prezzoMax);
         for (Gioco gioco : giochi) {
             System.out.println(gioco.getTitolo() + " - " + gioco.getPrezzo() + " €");
@@ -199,7 +200,7 @@ public class Application {
     private static void ricercaPerNumeroDIGiocatori(Scanner scanner, Collezione collezione) {
         System.out.println("Inserisci il numero di giocatori:");
         int numGiocatori = scanner.nextInt();
-        scanner.nextLine(); // Consuma la newline
+        scanner.nextLine();
         List<GiocoDaTavolo> giochi = collezione.ricercaPerNumeroGiocatori(numGiocatori);
         for (GiocoDaTavolo gioco : giochi) {
             System.out.println(gioco.getTitolo() + " - " + gioco.getNumeroGiocatori() + " giocatori");
@@ -209,7 +210,7 @@ public class Application {
     private static void rimuoviGiocoDallaCollezione(Scanner scanner, Collezione collezione) {
         System.out.println("Inserisci l'ID del gioco da rimuovere:");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consuma la newline
+        scanner.nextLine();
         collezione.rimuoviElemento(id);
         System.out.println("Gioco rimosso con successo!");
     }
@@ -217,7 +218,7 @@ public class Application {
     private static void aggiornaGioco(Scanner scanner, Collezione collezione) {
         System.out.println("Aggiorna un videogioco (1) o un gioco da tavolo (2)?");
         int tipo = scanner.nextInt();
-        scanner.nextLine(); // Consuma la newline
+        scanner.nextLine();
         if (tipo == 1) {
             System.out.println("Inserisci l'ID, Titolo, Anno di Pubblicazione, Prezzo, Piattaforma, Durata in Minuti, Genere:");
             int id = scanner.nextInt(); scanner.nextLine();
