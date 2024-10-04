@@ -25,6 +25,9 @@ public class GiocoDaTavolo extends Gioco {
     public void setDurataMediaPartita(int durataMediaPartita) {
         this.durataMediaPartita = durataMediaPartita;
     }
+    public String getDurataInMinuti() {
+        return durataMediaPartita + " minuti";
+    }
 
     @Override
     public String toString() {

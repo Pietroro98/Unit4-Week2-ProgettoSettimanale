@@ -36,6 +36,10 @@ public class Videogioco extends Gioco{
         this.genere = genere;
     }
 
+    public String getDurataInMinuti() {
+        return durataGioco + " minuti";
+    }
+
     @Override
     public String toString() {
         return "Videogioco{" +

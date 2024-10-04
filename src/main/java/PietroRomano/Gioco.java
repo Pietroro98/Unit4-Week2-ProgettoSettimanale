@@ -1,5 +1,4 @@
 package PietroRomano;
-
 public class Gioco {
    private int idGioco;
    private String titolo;
